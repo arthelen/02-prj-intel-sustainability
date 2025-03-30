@@ -62,11 +62,13 @@ section {
 /* Style the horizontal scrollbar */
 section::-webkit-scrollbar {
   height: 10px; /* Set the height of the scrollbar */
+  width: auto; /* Ensure the scrollbar spans only the section width */
 }
 
 section::-webkit-scrollbar-track {
   background: #ddd; /* Light gray background for the scrollbar track */
   border-radius: 5px; /* Round the corners of the track */
+  margin: 0 90px; /* Add spacing on the sides to prevent spanning the full page */
 }
 
 section::-webkit-scrollbar-thumb {
@@ -98,7 +100,7 @@ section div {
   overflow: hidden; /* Hide content that overflows the card */
   transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add smooth scaling transition */
   scroll-snap-align: start; /* Ensure each card snaps to the start of the viewport */
-  margin: 40px auto;
+  margin: 40px 0;
 }
 
 /* Style the <hr> tags inside cards */
@@ -178,7 +180,7 @@ section div h3 {
   font-family: 'Oswald', sans-serif; /* Use Oswald font for the years */
   font-size: 1.5em; /* Set a standard font size */
   color: #0068B5; /* Use the same blue as the header */
-  margin-top: 30px; /* Add spacing above the footer text */
+  margin-top: 50px; /* Add spacing above the footer text */
   font-weight: bold;
 }
 
@@ -200,6 +202,11 @@ section div h3 {
 
 /* Media query for medium screens (min-width: 601px) */
 @media (min-width: 601px) {
+  header img {
+    max-width: 55%; /* Scale the logo for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
   section {
     flex-direction: row; /* Arrange cards horizontally */
     flex-wrap: nowrap; /* Prevent wrapping */
@@ -212,6 +219,10 @@ section div h3 {
     min-width: 300px; /* Maintain consistent card width */
     max-width: 300px; /* Prevent cards from stretching */
   }
+  
+  .timeline-footer-small {
+    opacity: 0;
+  }
 }
 
 /* Media query for small screens (max-width: 600px) */
@@ -223,7 +234,7 @@ section div h3 {
   }
 
   header img {
-    max-width: 70%; /* Scale the logo for smaller screens */
+    max-width: 55%; /* Scale the logo for smaller screens */
     height: auto; /* Maintain aspect ratio */
   }
 
@@ -247,5 +258,33 @@ section div h3 {
 
   section div::after {
     font-size: 1.2em; /* Adjust font size for smaller screens */
+  }
+
+  .timeline-footer {
+    margin-top: 0; /* Add spacing above the footer text */
+    margin-bottom: 30px;
+    opacity: 0; /* Hide the footer text on smaller screens */
+  }
+
+  .timeline-footer-small {
+    font-family: 'Oswald', sans-serif; /* Use Oswald font for the years */
+    font-size: 1.5em; /* Set a standard font size */
+    color: #0068B5; /* Use the same blue as the header */
+    margin-top: -70px;
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+}
+
+/* Media query for large screens (min-width: 1200px) */
+@media (min-width: 1200px) {
+  section div {
+    min-width: 350px; /* Increase the minimum width of the cards */
+    max-width: 350px; /* Increase the maximum width of the cards */
+    height: 450px; /* Increase the height of the cards */
+  }
+
+  .timeline-footer-small {
+    opacity: 0;
   }
 }
