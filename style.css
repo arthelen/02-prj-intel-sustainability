@@ -32,7 +32,7 @@ header img {
 
 header h1 {
   font-family: 'Oswald', sans-serif; /* Use a standout font for the years */
-  font-size: 2em; /* Reduce the main heading size */
+  font-size: 2.3em; /* Reduce the main heading size */
   margin: 8px 0; /* Adjust spacing around the heading */
   color: #00C7FD; /* Fallback color */
   background: linear-gradient(to bottom, #ffffff, #00C7FD); /* Change to a top-down gradient */
