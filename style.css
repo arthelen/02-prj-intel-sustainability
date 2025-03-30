@@ -53,7 +53,8 @@ section {
   gap: 27px; /* Add spacing between cards */
   padding: 20px; /* Add padding around the section */
   justify-content: flex-start; /* Align cards to the start to ensure the first card is visible */
-  max-width: calc(250px * 6 + 90px); /* Adjust to show 6 cards (300px each + 20px gap) */
+  max-width: 100%; /* Ensure the section does not overflow the screen */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
   margin: 0 auto; /* Center the section horizontally */
   scroll-snap-type: x mandatory; /* Enable horizontal scroll snapping */
 }
@@ -80,7 +81,9 @@ section::-webkit-scrollbar-thumb:hover {
 /* Position the card content and overlay */
 section div {
   position: relative; /* Set position to allow overlay positioning */
-  flex: 0 0 300px; /* Set a fixed width for each card */
+  flex: 0 0 auto; /* Prevent cards from shrinking or growing */
+  min-width: 300px; /* Ensure cards maintain a minimum width */
+  max-width: 300px; /* Keep cards consistent in size */
   background-color: #f9f9f9; /* Light background for cards */
   border: 3px solid #ddd; /* Add a border to cards */
   border-radius: 10px; /* Slightly round the corners */
@@ -184,6 +187,33 @@ section div h3 {
   font-weight: bolder;
 }
 
+/* Media query for medium screens (max-width: 900px) */
+@media (max-width: 900px) {
+  section {
+    flex-wrap: wrap; /* Allow wrapping for better layout */
+    justify-content: center; /* Center cards horizontally */
+    gap: 15px; /* Adjust spacing between cards */
+    overflow-x: visible; /* Disable horizontal scrolling */
+    max-width: 95%; /* Limit width to prevent overflow */
+  }
+}
+
+/* Media query for medium screens (min-width: 601px) */
+@media (min-width: 601px) {
+  section {
+    flex-direction: row; /* Arrange cards horizontally */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 27px; /* Maintain spacing between cards */
+    scroll-snap-type: x mandatory; /* Enable horizontal scroll snapping */
+  }
+
+  section div {
+    min-width: 300px; /* Maintain consistent card width */
+    max-width: 300px; /* Prevent cards from stretching */
+  }
+}
+
 /* Media query for small screens (max-width: 600px) */
 @media (max-width: 600px) {
   header div {
@@ -193,30 +223,29 @@ section div h3 {
   }
 
   header img {
-    max-width: 70%; /* Adjust logo size for smaller screens */
-    margin-bottom: 20px; /* Reduce spacing below the logo */
+    max-width: 70%; /* Scale the logo for smaller screens */
+    height: auto; /* Maintain aspect ratio */
   }
 
   header h1 {
-    font-size: 1.5em; /* Reduce heading size for smaller screens */
+    font-size: 1.7em; /* Reduce heading size for smaller screens */
   }
 
   header p {
-    font-size: 1em; /* Adjust paragraph font size for readability */
+    font-size: 1.3em; /* Adjust paragraph font size for readability */
   }
 
   section {
     flex-direction: column; /* Stack cards vertically */
     overflow-x: visible; /* Disable horizontal scrolling */
-    gap: 15px; /* Adjust spacing between cards */
   }
 
   section div {
-    flex: 1 1 auto; /* Allow cards to stretch */
-    width: 100%; /* Make cards take full width */
+    padding: 20px 0;
+    margin: 15px 0;;
   }
 
   section div::after {
-    font-size: 1em; /* Adjust font size for smaller screens */
+    font-size: 1.2em; /* Adjust font size for smaller screens */
   }
 }
