@@ -110,7 +110,6 @@ section div hr {
 /* Add hover effect for cards */
 section div:hover {
   box-shadow: 0 4px 10px rgba(0, 104, 181, 0.8); /* Add a dark blue drop shadow on hover */
-  transform: scale(1.03); /* Scale the card up slightly on hover */
   border: 3px solid #ddd; /* Add a border to cards */
   border-radius: 10px; /* Slightly round the corners */
 }
@@ -140,7 +139,7 @@ section div::after {
 /* Show the overlay on hover */
 section div:hover::after {
   opacity: 1; /* Make the overlay visible */
-  border: 3px solid #ddd; /* Add a border to cards */
+  border: 3px solid #0068B5; /* Add a border to cards */
   border-radius: 10px; /* Slightly round the corners */
 }
 
@@ -173,6 +172,7 @@ section div h3 {
 
 /* Style the timeline footer */
 .timeline-footer {
+  font-family: 'Oswald', sans-serif; /* Use Oswald font for the years */
   font-size: 1.5em; /* Set a standard font size */
   color: #0068B5; /* Use the same blue as the header */
   margin-top: 30px; /* Add spacing above the footer text */
