@@ -19,21 +19,24 @@ header {
 }
 
 header div {
-  max-width: 750px; /* Limit the content width */
+  max-width: 850px; /* Limit the content width */
   margin: 40px auto; /* Center the content within the header */
   padding: 0 15px; /* Add horizontal padding for smaller screens */
 }
 
 header img {
-  max-width: 50%; /* Ensure the image scales with the screen size */
+  max-width: 37%; /* Ensure the image scales with the screen size */
   height: auto; /* Maintain the aspect ratio */
   margin-bottom: 30px; /* Add spacing below the logo */
 }
 
 header h1 {
-  font-size: 2.5em; /* Make the main heading prominent */
+  font-size: 2.7em; /* Make the main heading prominent */
   margin: 10px 0; /* Add spacing around the heading */
-  color: #00C7FD; /* Keep the existing color */
+  color: transparent; /* Make the text transparent to show the gradient */
+  background-image: linear-gradient(to bottom, #ffffff, #00C7FD); /* Apply top-down gradient */
+  -webkit-background-clip: text; /* Clip the gradient to the text */
+  background-clip: text; /* Ensure compatibility */
 }
 
 header p {
@@ -47,10 +50,10 @@ section {
   display: flex; /* Use Flexbox for layout */
   flex-wrap: nowrap; /* Prevent wrapping on larger screens */
   overflow-x: auto; /* Enable horizontal scrolling */
-  gap: 20px; /* Add spacing between cards */
+  gap: 27px; /* Add spacing between cards */
   padding: 20px; /* Add padding around the section */
   justify-content: flex-start; /* Align cards to the start to ensure the first card is visible */
-  max-width: calc(300px * 6 + 90px); /* Adjust to show 6 cards (300px each + 20px gap) */
+  max-width: calc(250px * 6 + 90px); /* Adjust to show 6 cards (300px each + 20px gap) */
   margin: 0 auto; /* Center the section horizontally */
   scroll-snap-type: x mandatory; /* Enable horizontal scroll snapping */
 }
@@ -79,7 +82,7 @@ section div {
   position: relative; /* Set position to allow overlay positioning */
   flex: 0 0 300px; /* Set a fixed width for each card */
   background-color: #f9f9f9; /* Light background for cards */
-  border: 1px solid #ddd; /* Add a border to cards */
+  border: 3px solid #ddd; /* Add a border to cards */
   border-radius: 10px; /* Slightly round the corners */
   padding: 15px; /* Add padding inside the cards */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
@@ -90,21 +93,26 @@ section div {
   align-items: center; /* Center content horizontally */
   height: 400px; /* Set a fixed height for uniformity */
   overflow: hidden; /* Hide content that overflows the card */
-  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add smooth scaling transition */
   scroll-snap-align: start; /* Ensure each card snaps to the start of the viewport */
+  margin: 40px auto;
 }
 
 /* Style the <hr> tags inside cards */
 section div hr {
   border: none; /* Remove default border */
-  border-top: 2px solid #00C7FD; /* Add a light blue top border */
-  width: 80%; /* Set the width of the line */
-  margin: 10px auto; /* Center the line and add spacing */
+  border-top: 5px solid #00C7FD; /* Add a light blue top border */
+  border-radius: 15px;
+  width: 30%; /* Set the width of the line */
+  margin: 0 auto; /* Center the line and add spacing */
 }
 
 /* Add hover effect for cards */
 section div:hover {
   box-shadow: 0 4px 10px rgba(0, 104, 181, 0.8); /* Add a dark blue drop shadow on hover */
+  transform: scale(1.03); /* Scale the card up slightly on hover */
+  border: 3px solid #ddd; /* Add a border to cards */
+  border-radius: 10px; /* Slightly round the corners */
 }
 
 /* Style the overlay */
@@ -123,7 +131,7 @@ section div::after {
   text-align: center; /* Center-align the text */
   opacity: 0; /* Hide the overlay by default */
   transition: opacity 0.3s ease; /* Smooth transition for hover effect */
-  padding: 15px; /* Add padding for text readability */
+  padding: 15px 25px; /* Add padding for text readability */
   border-radius: inherit; /* Match the card's border radius */
   box-sizing: border-box; /* Ensure padding is included in the dimensions */
   font-size: 1.2em; /* Set a larger font size for the overlay text */
@@ -132,13 +140,15 @@ section div::after {
 /* Show the overlay on hover */
 section div:hover::after {
   opacity: 1; /* Make the overlay visible */
+  border: 3px solid #ddd; /* Add a border to cards */
+  border-radius: 10px; /* Slightly round the corners */
 }
 
 section div img {
   max-width: 80%; /* Scale images to fit within the card */
   height: auto; /* Maintain aspect ratio */
-  margin-bottom: 10px; /* Add spacing below the image */
-  border: solid #0068B5 7px;
+  margin-bottom: 20px; /* Add spacing below the image */
+  /* border: solid #0068B5 7px; */
   border-radius: 10px; /* Round the image corners */
 }
 
@@ -149,13 +159,16 @@ section div h2, section div h3, section div p {
 }
 
 section div h2 {
-  font-size: 1.5em; /* Set a larger font size for headings */
-  color: #00C7FD; /* Use the same blue as the header */
+  font-family: 'Oswald', sans-serif; /* Use Oswald font for the years */
+  font-size: 2em; /* Set a larger font size for headings */
+  color: #0068B5; /* Use the dark blue color */
+  margin: 10px 0; /* Add spacing around the year */
 }
 
 section div h3 {
   font-size: 1.2em; /* Set a slightly smaller font size for subheadings */
   font-weight: lighter;
+  margin-bottom: 20px;
 }
 
 /* Style the timeline footer */
