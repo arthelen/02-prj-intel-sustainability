@@ -197,7 +197,7 @@ section div h3 {
     justify-content: center; /* Center cards horizontally */
     gap: 15px; /* Adjust spacing between cards */
     overflow-x: visible; /* Disable horizontal scrolling */
-    max-width: 95%; /* Limit width to prevent overflow */
+    max-width: 75%; /* Limit width to prevent overflow */
   }
 }
 
@@ -214,13 +214,9 @@ section div h3 {
     overflow-x: auto; /* Enable horizontal scrolling */
     gap: 27px; /* Maintain spacing between cards */
     scroll-snap-type: x mandatory; /* Enable horizontal scroll snapping */
+    justify-content: flex-start; /* Ensure the first card is always visible */
   }
 
-  section div {
-    min-width: 300px; /* Maintain consistent card width */
-    max-width: 300px; /* Prevent cards from stretching */
-  }
-  
   .timeline-footer-small {
     opacity: 0;
   }
