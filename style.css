@@ -54,7 +54,7 @@ section {
   gap: 27px; /* Add spacing between cards */
   padding: 20px; /* Add padding around the section */
   justify-content: flex-start; /* Align cards to the start to ensure the first card is visible */
-  max-width: 100%; /* Ensure the section does not overflow the screen */
+  max-width: 75%; /* Ensure the section does not overflow the screen */
   box-sizing: border-box; /* Include padding and border in the width calculation */
   margin: 0 auto; /* Center the section horizontally */
   scroll-snap-type: x mandatory; /* Enable horizontal scroll snapping */
