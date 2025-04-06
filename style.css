@@ -190,64 +190,6 @@ section div h3 {
   font-weight: bolder;
 }
 
-/* Style the info-columns section */
-.info-columns {
-  display: flex; /* Use Flexbox for layout */
-  justify-content: center; /* Center the columns horizontally */
-  padding: 40px 20px; /* Add padding around the section */
-  background-color: #f0f8ff; /* Light blue background for distinction */
-}
-
-.info-columns > div {
-  display: flex; /* Arrange columns horizontally */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  gap: 20px; /* Add spacing between columns */
-  max-width: 1200px; /* Limit the width of the section */
-}
-
-/* Style each info-column */
-.info-column {
-  flex: 1 1 300px; /* Allow columns to grow and shrink, with a minimum width of 300px */
-  background-color: #ffffff; /* White background for columns */
-  border: 2px solid #ddd; /* Add a light border */
-  border-radius: 10px; /* Round the corners */
-  padding: 20px; /* Add padding inside the columns */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  text-align: left; /* Align text to the left */
-}
-
-/* Style the headings inside info-column */
-.info-column h2 {
-  font-size: 1.8em; /* Slightly larger font size for headings */
-  color: #0068B5; /* Use the same blue as the header */
-  margin-bottom: 15px; /* Add spacing below the heading */
-}
-
-/* Style the paragraphs inside info-column */
-.info-column p {
-  font-size: 1em; /* Standard font size for paragraphs */
-  color: #333; /* Dark gray text color */
-  line-height: 1.6; /* Improve readability with line spacing */
-  margin-bottom: 20px; /* Add spacing below the paragraph */
-}
-
-/* Style the Learn More links */
-.info-column a {
-  display: inline-block; /* Make the link behave like a button */
-  padding: 10px 15px; /* Add padding inside the link */
-  background-color: #0068B5; /* Blue background for the button */
-  color: #ffffff; /* White text color */
-  text-decoration: none; /* Remove underline */
-  border-radius: 5px; /* Round the corners */
-  font-size: 1em; /* Standard font size */
-  transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-/* Change background color on hover */
-.info-column a:hover {
-  background-color: #004a8f; /* Darker blue on hover */
-}
-
 /* Media query for medium screens (max-width: 900px) */
 @media (max-width: 900px) {
   section {
